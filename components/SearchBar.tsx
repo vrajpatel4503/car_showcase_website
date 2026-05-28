@@ -6,7 +6,7 @@ import CustomButton from "./CustomButton";
 
 const SearchBar = () => {
   return (
-    <section className="w-full mt-10">
+    <section className="w-full mt-2">
       <div className="max-w-[1440px] mx-auto shadow-lg py-6 flex flex-col lg:flex-row items-center gap-4">
         {/* Car Name */}
         <div className="flex-1 w-full">
