@@ -1,10 +1,14 @@
-import Image from 'next/image'
-import { Hero } from '@/components'
+import Image from "next/image";
+import { Hero, SearchBar } from "@/components";
 
 export default function Home() {
   return (
-    <main className='overflow-hidden'>
+    <main className="overflow-hidden">
       <Hero />
+
+      <section className="container-width relative z-20 mt-6 lg:-mt-10">
+        <SearchBar />
+      </section>
     </main>
-  )
+  );
 }

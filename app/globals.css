@@ -222,4 +222,8 @@
 .search-manufacturer__option {
   @apply cursor-default select-none py-2 pl-10 pr-4;
 }
+
+.container-width {
+  @apply max-w-[1440px] mx-auto;
+}
 /* END: search manufacturer styles */

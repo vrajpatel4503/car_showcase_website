@@ -8,8 +8,8 @@ import logo from "../public/logo.svg";
 
 const Navbar = () => {
   return (
-    <header className="w-full bg-white shadow-sm">
-      <nav className="max-w-[1440px] mx-auto flex justify-between items-center px-4 md:px-8 py-4">
+    <header className="w-full bg-white">
+      <nav className="max-w-[1440px] mx-auto flex justify-between items-center px-4 md:px-2 py-4">
         {/* Logo */}
         <div className="flex items-center">
           <Image src={logo} alt="logo" width={118} height={18} priority className="object-contain" />
