@@ -13,7 +13,7 @@ const SearchBar = () => {
 
   const [carName, setCarName] = useState("");
   const [carModel, setCarModel] = useState("");
-  const [fuels, setFuels] = useState("");
+  const [fuel, setFuel] = useState("");
   const [year, setYear] = useState("");
 
   const [showDropDown, setShowDropDown] = useState(false);
@@ -27,7 +27,7 @@ const SearchBar = () => {
 
     if (carName) params.set("cn", carName);
     if (carModel) params.set("cm", carModel);
-    if (fuels) params.set("f", fuels);
+    if (fuel) params.set("f", fuel);
     if (year) params.set("y", year);
 
     router.push(`/?${params.toString()}`);
@@ -36,10 +36,10 @@ const SearchBar = () => {
   const handleClearSearch = () => {
     setCarName("");
     setCarModel("");
-    setFuels("");
+    setFuel("");
     setYear("");
 
-    router.push("/")
+    router.push("/");
   };
 
   return (
@@ -93,14 +93,13 @@ const SearchBar = () => {
         <div className="w-full lg:w-[180px]">
           <select
             className="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-black bg-white"
-            value={fuels}
-            onChange={(e) => setFuels(e.target.value)}
+            value={fuel}
+            onChange={(e) => setFuel(e.target.value)}
           >
             <option value={""}>Fuel Type</option>
-            <option value={"pertrol"}>Petrol</option>
             <option value={"diesel"}>Diesel</option>
             <option value={"electric"}>Electric</option>
-            <option value={"hybrid"}>Hybrid</option>
+            <option value={"gas"}>Gas</option>
           </select>
         </div>
 

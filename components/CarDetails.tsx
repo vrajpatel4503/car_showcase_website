@@ -6,6 +6,7 @@ import Image from "next/image";
 import { CarProps } from "../types/index.types";
 
 import hero from "../public/hero.png";
+import { capitalizeFirstLetter } from "@/utils";
 
 interface CarDetailsProps {
   isOpen: boolean;
@@ -56,38 +57,32 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
 
           {/* RIGHT SIDE */}
           <div className="flex-1">
-            <h2 className="text-3xl font-bold capitalize">
-              {/* {car.make} {car.model} */}j
+            <h2 className="text-2xl font-bold capitalize">
+              {car.make} {car.model}
             </h2>
 
             <div className="mt-8 flex flex-col gap-5">
-              {/* <DetailItem title="Make" value={car.make} /> */}
-              <DetailItem title="Make" value="l" />
+              <DetailItem
+                title="Car Name"
+                value={capitalizeFirstLetter(car.make)}
+              />
 
-              {/* <DetailItem title="Model" value={car.model} /> */}
-              <DetailItem title="Make" value="l" />
+              <DetailItem title="Model" value={car.model} />
 
-              {/* <DetailItem title="Year" value={car.year} /> */}
-              <DetailItem title="Make" value="l" />
+              <DetailItem title="Year" value={car.year} />
 
-              {/* <DetailItem title="Fuel Type" value={car.fuel_type} /> */}
-              <DetailItem title="Make" value="l" />
+              <DetailItem title="Fuel Type" value={car.fuel_type} />
 
               <DetailItem
                 title="Transmission"
-                // value={car.transmission === "a" ? "Automatic" : "Manual"}
-                value="j"
+                value={car.transmission === "a" ? "Automatic" : "Manual"}
               />
 
-              {/* <DetailItem title="Drive" value={car.drive.toUpperCase()} />
-               */}
-              <DetailItem title="Make" value="l" />
+              <DetailItem title="Drive" value={car.drive.toUpperCase()} />
 
-              {/* <DetailItem title="Cylinder" value={car.cylinders} /> */}
-              <DetailItem title="Make" value="l" />
+              <DetailItem title="Cylinder" value={car.cylinders} />
 
-              {/* <DetailItem title="Displacement" value={car.displacement} /> */}
-              <DetailItem title="Make" value="l" />
+              <DetailItem title="Displacement" value={car.displacement} />
             </div>
           </div>
         </div>
@@ -105,7 +100,7 @@ interface DetailItemProps {
 
 const DetailItem = ({ title, value }: DetailItemProps) => {
   return (
-    <div className="flex items-center justify-between rounded-xl bg-gray-50 px-5 py-4">
+    <div className="flex items-center justify-between rounded-xl bg-gray-50 px-5 py-4 capitalize">
       <span className="text-gray-500">{title}</span>
 
       <span className="font-semibold text-black">{value}</span>
