@@ -224,6 +224,6 @@
 }
 
 .container-width {
-  @apply max-w-[1440px] mx-auto;
+  @apply px-4 mx-auto;
 }
 /* END: search manufacturer styles */

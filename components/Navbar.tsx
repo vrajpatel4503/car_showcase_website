@@ -3,16 +3,29 @@
 import React from "react";
 import Image from "next/image";
 import CustomButton from "./CustomButton";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 import logo from "../public/logo.svg";
 
 const Navbar = () => {
+  const router = useRouter();
+
   return (
-    <header className="w-full bg-white">
-      <nav className="max-w-[1440px] mx-auto flex justify-between items-center px-4 md:px-2 py-4">
+    <header className="w-full bg-white border-b">
+      <nav className="max-w-[1440px] mx-auto flex justify-between items-center px-1 md:-px-4 py-4">
         {/* Logo */}
         <div className="flex items-center">
-          <Image src={logo} alt="logo" width={118} height={18} priority className="object-contain" />
+          <Link href="/">
+            <Image
+              src={logo}
+              alt="logo"
+              width={118}
+              height={18}
+              priority
+              className="object-contain"
+            />
+          </Link>
         </div>
 
         {/* Buttons */}
@@ -21,14 +34,14 @@ const Navbar = () => {
             title="Login"
             containerStyles="bg-white border border-black text-black hover:bg-gray-100"
             textStyles="text-sm font-medium"
-            handleClick={() => alert("Login Successful")}
+            handleClick={() => router.push("/login")}
           />
 
           <CustomButton
-            title="Sign Up"
+            title="Register"
             containerStyles="bg-black text-white hover:bg-gray-800"
             textStyles="text-sm font-medium"
-            handleClick={() => alert("Register Successful ")}
+            handleClick={() => router.push("/register")}
           />
         </div>
       </nav>
